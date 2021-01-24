@@ -3,6 +3,6 @@
         { "version": "0.1.0", "required": true }
     ],
     "ios": [
-        { "version": "0.2.0", "required": true }
+        { "version": "0.1.0", "required": true }
     ]
 }
