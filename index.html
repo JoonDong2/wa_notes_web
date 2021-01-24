@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BYD9WWE8S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3BYD9WWE8S');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="뉴스 매니저" />
+    <meta name="author" content="뉴스 매니저" />
+    <meta name="keywords" content="뉴스 모음 네이버 카카오 네이트 추천 앱 어플리케이션 news application">
+    <meta name="subject" content="정말 쉬운 뉴스 관리 앱" />
+    <title>뉴스 매니저</title>
+    <meta name="description" content="정말 쉬운 뉴스 관리 앱. 스크랩한 기사를 한 눈에 확인할 수 있습니다. 자주 찾는 언론사를 즐겨찾기에 추가해 보세요. 내가 활동한 내용을 한 눈에 확인할 수 있어요. 나와 마음이 맞는 사용자를 구독해 보세요. 다른 사용자가 공유한 스크랩에 댓글을 남겨 보세요.">
+    <meta property="og:description" content="정말 쉬운 뉴스 관리 앱.직관적인 뉴스 관리 App. 스크랩한 기사를 한 눈에 확인할 수 있습니다. 자주 찾는 언론사를 즐겨찾기에 추가해 보세요. 내가 활동한 내용을 한 눈에 확인할 수 있어요. 나와 마음이 맞는 사용자를 구독해 보세요. 다른 사용자가 공유한 스크랩에 댓글을 남겨 보세요.">
+    <meta property="og:image" content="https://xn--vg1b7f65r8vjcwg.kr/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #000;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -ms-overflow-style: none;
+        }
+        ::-webkit-scrollbar { display: none; }
+        a, .swiper-button-prev, .swiper-button-next {
+            -webkit-tap-highlight-color: transparent;
+        }
+        *:focus { outline:none !important; }
+
+        .contianer {
+            position: absolute;
+            width: 100%;
+        }
+
+        .iphone-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 1px;
+        }
+        .swiper-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-button-prev {
+            color: #aaa; 
+        }
+        .swiper-button-next {
+            color: #aaa; 
+        }
+
+        .store-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ffdad9;
+            font-size: 32px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+        .desc {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            line-height: 24px;
+            font-family: 'Jua', sans-serif;
+        }
+
+        .other-desc {
+            color: #fafafa; 
+            display: none; 
+            margin-top: 15px;
+            font-family: 'Jua', sans-serif;
+        }
+    </style>
+</head>
+<body onload="onload()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div id="container" class="container">
+        <div>
+            <p id="title" class="title">스크랩을 한 눈에</p>
+            <p id="desc" class="desc">스크랩한 기사를 한 눈에<br>확인할 수 있습니다.</p>
+        </div>
+        
+        <!-- Slider main container -->
+        <div id="swiper-container" class="swiper-container">
+    
+            <!-- IPhone Area -->
+            <div id="iphone-container" class="iphone-container">
+                <div style="flex:1; height: 100%; background-color: #000; z-index: 10;"></div>
+                <div style="position:relative; z-index: 10;">
+                    <img id="iphone" style="position: relative; z-index: 5; height: 375px;" src="./images/app/iphone.png"/>
+                    <div style="z-index: 3; position: absolute; top: 0; left: -2px; width: 8px; height: 100%; background-color: #000;"></div>
+                    <div style="z-index: 3; position: absolute; top: 0; right: -2px; width: 8px; height: 100%; background-color: #000;"> </div>
+                </div>
+                <div style="flex:1; height: 100%; background-color: #000; z-index: 10;"></div>
+            </div>
+    
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/1.jpg"/>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/2.jpg"/>
+                    </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/3.jpg"/>
+                    </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/4.jpg"/>
+                    </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/5.jpg"/>
+                    </div>
+                </div>
+    
+                <div class="swiper-slide">
+                    <div class="swiper-item">
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/6.jpg"/>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    
+        <div class="store-container">
+            <div id="appstore" onclick="touch_appstore()" style="display: none;">
+                <img id="appstore-image" src="./images/app/appstore.svg" />
+            </div>
+
+            <div id="dummy" style="width: 15px; height: 15px; display: none;"></div>
+
+            <div id="playstore" onclick="touch_playstore()" style="display: none;">
+                <img id="playstore-image" src="./images/app/playstore.png" />
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 15px;">
+        <p style="color: #fff; width: 100%; text-align: center; margin: 0 0 5px 0;">ⓒ 2021. 준랩 all rights reserved.</p>
+        <p style="color: #fff; width: 100%; text-align: center; margin: 0 0 5px 0;">상호명: 준랩</p>
+        <p style="color: #fff; width: 100%; text-align: center; margin: 0 0 5px 0;">대표: 권준동</p>
+        <p style="color: #fff; width: 100%; text-align: center; margin: 0 0 5px 0;">사업자번호: 786-02-01674</p>
+    </div>
+
+    <script>
+        let store_touched = false;
+        let isOther = false;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        function touch_appstore(event) {
+            try {
+                event.preventDefault();
+                if(!store_touched && !isOther) {
+                    gtag('event', 'touch_app_store');
+                }
+                store_touched = true;
+
+                var win = window.open("https://apps.apple.com/kr/app/id1541146594", '_blank');
+                win.focus();
+            } catch(e) {}
+        }
+
+        function touch_playstore(event) {
+            try {
+                event.preventDefault();
+                if(!store_touched && !isOther) {
+                    gtag('event', 'touch_play_store');
+                }
+                store_touched = true;
+
+                var win = window.open("https://play.google.com/store/apps/details?id=com.joondong.news_keeper", '_blank');
+                win.focus();
+            } catch(e) {}
+        }
+
+        function checkMobile(){
+            var varUA = navigator.userAgent.toLowerCase();
+            if ( varUA.indexOf('android') > -1) {
+                return "android";
+            } else if ( varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1 ) {
+                return "ios";
+            } else {
+                return "other";
+            }
+        }
+        
+        var descriptions = [{
+            title: "스크랩을 한 눈에",
+            desc: "스크랩한 기사를 한 눈에<br>확인할 수 있습니다.",
+            color: "#ffdad9"
+        }, {
+            title: "나만의 언론사 모음",
+            desc: "자주 찾는 언론사를<br>즐겨찾기에 추가해 보세요.",
+            color: "#ffde8c"
+        }, {
+            title: "모든 정보를 한 눈에",
+            desc: "내가 활동한 내용을<br>한 눈에 확인할 수 있어요.",
+            color: "#fffccf"
+        }, {
+            title: "구독/좋아요/싫어요",
+            desc: "나와 마음이 맞는<br>사용자를 구독해 보세요.",
+            color: "#e3ffe7"
+        }, {
+            title: "타인의 생각들",
+            desc: "다른 사용자가 공유한<br>기사와 메모를 볼 수 있어요.",
+            color: "#e3eaff"
+        }, {
+            title: "채팅? 댓글입니다.",
+            desc: "다른 사용자가 공유한<br>스크랩에 댓글을 남겨 보세요.",
+            color: "#f5e3fc"
+        }]
+
+        function onload() {
+            const mobile = checkMobile();
+            const playstore = document.getElementById("playstore");
+            const appstore = document.getElementById("appstore");
+
+            playstore.addEventListener('click', touch_playstore);
+            appstore.addEventListener('click', touch_appstore);
+
+            playstore.style.cursor = "pointer";
+            appstore.style.cursor = "pointer";
+
+            if(mobile === "android") {
+                playstore.style.display = "block";
+                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+            } 
+            else if(mobile === "ios") {
+                appstore.style.display = "block";
+                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+            }
+            else {
+                isOther = true;
+                playstore.style.display = "block";
+                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+                
+                const appstore = document.getElementById("appstore");
+                appstore.style.display = "block";
+                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+
+                document.getElementById("dummy").style.display = "block";
+            }
+
+            var swiper = new Swiper('.swiper-container', {
+                spaceBetween: 30,
+                centeredSlides: true,
+                mousewheel: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    slideChange: function(swiper) {
+                        const description = descriptions[swiper.activeIndex];
+
+                        const title = document.getElementById("title");
+                        title.innerHTML = description.title;
+                        title.style.color = description.color;
+
+                        document.getElementById("desc").innerHTML = description.desc;
+                    }
+                }
+            });
+
+            const container = document.getElementById("container")
+            container.style.height = `${window.innerHeight}px`;
+            container.style.display = "flex";
+            container.style.justifyContent = "center";
+            container.style.alignItems = "center";
+            container.style.flexDirection = "column";
+
+            document.getElementById("title").style.fontSize = `${window.innerHeight * 0.05}px`;
+            document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.03}px`;
+
+            document.getElementById("swiper-container").style.height = `${window.innerHeight * 0.7}px`;
+            document.getElementById("iphone-container").style.height = `${window.innerHeight * 0.7}px`;
+            document.getElementById("iphone").style.height = `${window.innerHeight * 0.65}px`;
+
+            const swiper_images = document.getElementsByClassName("swiper-image")
+            for (var i=0; i<swiper_images.length; i++) {
+                swiper_images[i].style.height = `${window.innerHeight * 0.61}px`;
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
