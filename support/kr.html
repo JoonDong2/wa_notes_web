@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Manager Support</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Do Hyeon", sans-serif;
+        }
+        a:link { color: #2259f0; text-decoration: none;}
+        a:visited { color: #2259f0; text-decoration: none;}
+        a:hover { color: #2259f0; text-decoration: none;}
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20pt;
+            margin-bottom: 10pt;
+        }
+        .title_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .title {
+            font-size: 30pt;
+            line-height: 30pt;
+            font-weight: bold;
+            color: #ff7f00;
+        }
+        .sub_title {
+            font-size: 20pt;
+            font-weight: 100;
+            color: #666;
+        }
+        .terms_container {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10pt;
+            color: #2259f0;
+        }
+        .img_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-bottom: 10pt;
+        }
+        @media ( max-width: 500px ) {
+            .img_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                flex-direction: column;
+                margin-bottom: 10pt;
+            }
+        }
+        .contanct_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img width="75" style="margin-right: 10pt; margin-bottom: 5pt;" src="../images/logo.svg"/>
+        <div class="title_container">
+            <div class="title">뉴스 매니저</div>
+            <div class="sub_title">뉴스 관리 앱</div>
+        </div>
+    </div>
+    
+    <div class="terms_container">
+        <a href="https://news-keeper.joon-lab.com/terms_of_use/kr" style="margin-right: 10pt;">이용약관</a>
+        <a href="https://news-keeper.joon-lab.com/privacy/kr">개인정보처리방침</a>
+    </div>
+
+
+    <div class="img_container">
+        <a href="https://apps.apple.com/us/app/id1541146594"><img width="200" src="../images/apple_store.svg"/></a>
+        <div style="width: 10pt; height: 5pt;"></div>
+        <img width="200" src="../images/play_store.svg"/>
+    </div>
+
+    <div class="contact_container">
+        <p>연락처: kwonjoondong@joon-lab.com</p>
+    </div>
+</body>
+</html>
