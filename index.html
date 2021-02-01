@@ -29,7 +29,7 @@
     
     <style>
         body {
-            background-color: #000;
+            background-color: #f2f2f2;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -87,14 +87,14 @@
             width: 100%;
             text-align: center;
             margin-bottom: 10px;
-            color: #ffdad9;
+            color: #f78985;
             font-size: 32px;
             font-family: 'Do Hyeon', sans-serif;
         }
         .desc {
             width: 100%;
             text-align: center;
-            color: #fff;
+            color: #7C84E8;
             font-size: 20px;
             line-height: 24px;
             font-family: 'Jua', sans-serif;
@@ -111,8 +111,8 @@
 <body onload="onload()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="container" class="container">
         <div>
-            <p id="title" class="title">스크랩을 한 눈에</p>
-            <p id="desc" class="desc">스크랩한 기사를 한 눈에<br>확인할 수 있습니다.</p>
+            <p id="title" class="title">노트를 만들어 볼까요</p>
+            <p id="desc" class="desc">다양한 색의 노트를<br>만들고 편집할 수 있습니다.</p>
         </div>
         
         <!-- Slider main container -->
@@ -120,13 +120,13 @@
     
             <!-- IPhone Area -->
             <div id="iphone-container" class="iphone-container">
-                <div style="flex:1; height: 100%; background-color: #000; z-index: 10;"></div>
+                <div style="flex:1; height: 100%; background-color: #f2f2f2; z-index: 10;"></div>
                 <div style="position:relative; z-index: 10;">
                     <img id="iphone" style="position: relative; z-index: 5; height: 375px;" src="./images/app/iphone.png"/>
-                    <div style="z-index: 3; position: absolute; top: 0; left: -2px; width: 8px; height: 100%; background-color: #000;"></div>
-                    <div style="z-index: 3; position: absolute; top: 0; right: -2px; width: 8px; height: 100%; background-color: #000;"> </div>
+                    <div style="z-index: 3; position: absolute; top: 0; left: -2px; width: 8px; height: 100%; background-color: #f2f2f2;"></div>
+                    <div style="z-index: 3; position: absolute; top: 0; right: -2px; width: 8px; height: 100%; background-color: #f2f2f2;"> </div>
                 </div>
-                <div style="flex:1; height: 100%; background-color: #000; z-index: 10;"></div>
+                <div style="flex:1; height: 100%; background-color: #f2f2f2; z-index: 10;"></div>
             </div>
     
             <!-- Additional required wrapper -->
@@ -134,37 +134,31 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/1.jpg"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/1.png"/>
                     </div>
                 </div>
                 
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/2.jpg"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/2.png"/>
                     </div>
                 </div>
     
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/3.jpg"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/3.png"/>
                     </div>
                 </div>
     
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/4.jpg"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/4.png"/>
                     </div>
                 </div>
     
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/5.jpg"/>
-                    </div>
-                </div>
-    
-                <div class="swiper-slide">
-                    <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/6.jpg"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/5.png"/>
                     </div>
                 </div>
             </div>
@@ -205,9 +199,9 @@
             try {
                 event.preventDefault();
                 if(!store_touched && !isOther) {
+                    store_touched = true;
                     gtag('event', 'touch_app_store');
                 }
-                store_touched = true;
 
                 var win = window.open("https://apps.apple.com/kr/app/id1541146594", '_blank');
                 win.focus();
@@ -218,11 +212,11 @@
             try {
                 event.preventDefault();
                 if(!store_touched && !isOther) {
+                    store_touched = true;
                     gtag('event', 'touch_play_store');
                 }
-                store_touched = true;
 
-                var win = window.open("https://play.google.com/store/apps/details?id=com.joondong.news_keeper", '_blank');
+                var win = window.open("https://play.google.com/store/apps/details?id=com.joondong.notes", '_blank');
                 win.focus();
             } catch(e) {}
         }
@@ -239,29 +233,25 @@
         }
         
         var descriptions = [{
-            title: "스크랩을 한 눈에",
-            desc: "스크랩한 기사를 한 눈에<br>확인할 수 있습니다.",
-            color: "#ffdad9"
+            title: "노트를 만들어 볼까요",
+            desc: "다양한 색의 노트를<br>만들고 편집할 수 있습니다.",
+            color: "#f78985"
         }, {
-            title: "나만의 언론사 모음",
-            desc: "자주 찾는 언론사를<br>즐겨찾기에 추가해 보세요.",
-            color: "#ffde8c"
+            title: "확 들어오는 인터페이스",
+            desc: "중요도, 메모, 문제 사진을<br>편하게 확인할 수 있습니다.",
+            color: "#f59b36"
         }, {
-            title: "모든 정보를 한 눈에",
-            desc: "내가 활동한 내용을<br>한 눈에 확인할 수 있어요.",
-            color: "#fffccf"
+            title: "있을 건 다 있다.",
+            desc: "사진 촬영, 가져오기, 편집<br>문제 슬라이드 기능까지",
+            color: "#7dcc23"
         }, {
-            title: "구독/좋아요/싫어요",
-            desc: "나와 마음이 맞는<br>사용자를 구독해 보세요.",
-            color: "#e3ffe7"
+            title: "실제로 이렇게 사용",
+            desc: "사진 촬영, 가져오기, 편집<br>문제 슬라이드 기능까지",
+            color: "#b03cd6"
         }, {
-            title: "타인의 생각들",
-            desc: "다른 사용자가 공유한<br>기사와 메모를 볼 수 있어요.",
-            color: "#e3eaff"
-        }, {
-            title: "채팅? 댓글입니다.",
-            desc: "다른 사용자가 공유한<br>스크랩에 댓글을 남겨 보세요.",
-            color: "#f5e3fc"
+            title: "슬라이드 기능",
+            desc: "좌우로 슬라이드하여<br>다음 문제로 넘어가 보세요.",
+            color: "#3d64d9"
         }]
 
         function onload() {
