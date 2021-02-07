@@ -88,20 +88,17 @@
             text-align: center;
             margin-bottom: 5px;
             color: #e87c7c;
-            font-size: 32px;
             font-family: 'Do Hyeon', sans-serif;
         }
         .desc {
             width: 100%;
             text-align: center;
             color: #333;
-            font-size: 20px;
-            line-height: 21px;
             font-family: 'Jua', sans-serif;
         }
     </style>
 </head>
-<body onload="onload()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+<body onload="onload()" onresize="onload()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="container" class="container">
         <div>
             <p id="title" class="title">노트를 만들어 볼까요</p>
@@ -315,7 +312,7 @@
 
             document.getElementById("title").style.fontSize = `${window.innerHeight * 0.045}px`;
             document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.028}px`;
-            document.getElementById("desc").style.lineHeight = `${window.innerHeight * 0.03}px`;
+            document.getElementById("desc").style.lineHeight = `${window.innerHeight * 0.031}px`;
 
             document.getElementById("swiper-container").style.height = `${window.innerHeight * 0.75}px`;
             document.getElementById("iphone-container").style.height = `${window.innerHeight * 0.75}px`;
