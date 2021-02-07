@@ -86,7 +86,7 @@
         .title {
             width: 100%;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #e87c7c;
             font-size: 32px;
             font-family: 'Do Hyeon', sans-serif;
@@ -96,7 +96,7 @@
             text-align: center;
             color: #333;
             font-size: 20px;
-            line-height: 20px;
+            line-height: 21px;
             font-family: 'Jua', sans-serif;
         }
     </style>
@@ -182,6 +182,7 @@
     </div>
 
     <script>
+        let touch_processing = false;
         let store_touched = false;
         let isOther = false;
 
@@ -189,29 +190,35 @@
         function gtag(){dataLayer.push(arguments);}
 
         function touch_appstore(event) {
-            try {
-                event.preventDefault();
-                if(!store_touched && !isOther) {
-                    store_touched = true;
-                    gtag('event', 'touch_app_store');
-                }
+            if(!!touch_processing) {
+                touch_processing = false;
+                return
+            }
 
-                var win = window.open("https://apps.apple.com/kr/app/id1551315623", '_blank');
-                win.focus();
-            } catch(e) {}
+            if(!store_touched && !isOther) {
+                store_touched = true;
+                gtag('event', 'touch_app_store');
+            }
+            
+            
+            var win = window.open("https://apps.apple.com/kr/app/id1551315623", '_blank');
+            win.focus();
         }
 
         function touch_playstore(event) {
-            try {
-                event.preventDefault();
-                if(!store_touched && !isOther) {
-                    store_touched = true;
-                    gtag('event', 'touch_play_store');
-                }
+            if(!!touch_processing) {
+                touch_processing = false;
+                return
+            }
+            touch_processing = true;
 
-                var win = window.open("https://play.google.com/store/apps/details?id=com.joondong.notes", '_blank');
-                win.focus();
-            } catch(e) {}
+            if(!store_touched && !isOther) {
+                store_touched = true;
+                gtag('event', 'touch_play_store');
+            }
+
+            var win = window.open("https://play.google.com/store/apps/details?id=com.joondong.notes", '_blank');
+            win.focus();
         }
 
         function checkMobile(){
@@ -306,16 +313,16 @@
             container.style.alignItems = "center";
             container.style.flexDirection = "column";
 
-            document.getElementById("title").style.fontSize = `${window.innerHeight * 0.05}px`;
-            document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.03}px`;
+            document.getElementById("title").style.fontSize = `${window.innerHeight * 0.045}px`;
+            document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.028}px`;
 
-            document.getElementById("swiper-container").style.height = `${window.innerHeight * 0.7}px`;
-            document.getElementById("iphone-container").style.height = `${window.innerHeight * 0.7}px`;
-            document.getElementById("iphone").style.height = `${window.innerHeight * 0.65}px`;
+            document.getElementById("swiper-container").style.height = `${window.innerHeight * 0.75}px`;
+            document.getElementById("iphone-container").style.height = `${window.innerHeight * 0.75}px`;
+            document.getElementById("iphone").style.height = `${window.innerHeight * 0.73}px`;
 
             const swiper_images = document.getElementsByClassName("swiper-image")
             for (var i=0; i<swiper_images.length; i++) {
-                swiper_images[i].style.height = `${window.innerHeight * 0.61}px`;
+                swiper_images[i].style.height = `${window.innerHeight * 0.685}px`;
             }
         }
     </script>
