@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TSJ38N1KM2"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-TSJ38N1KM2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -23,9 +23,9 @@
     <meta property="og:image" content="./logo.png">
 
     <link rel="stylesheet" type="text/css" href="./reset.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -86,23 +86,52 @@
         .title {
             width: 100%;
             text-align: center;
-            margin-bottom: 5px;
             color: #e87c7c;
             font-family: 'Do Hyeon', sans-serif;
         }
         .desc {
             width: 100%;
             text-align: center;
-            color: #333;
-            font-family: 'Jua', sans-serif;
+            color: #666;
+            font-family: 'Do Hyeon', sans-serif;
         }
+        .documents {
+            position: fixed;
+            top: 0;
+            background: #fff;
+            height: 40px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+
+        @media screen and (max-width: 499px) { .documents { height: 30px; } }
+
+        .documents>a {
+            text-decoration: none;
+            color: #007FFF;
+            font-weight: bold;
+        }
+
+        .documents>a:hover {
+            color: #3198ff;
+        }
+
     </style>
 </head>
 <body onload="onload()" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
-    <div id="container" class="container">
+    <div class="documents">
+        <a href="./terms-of-use/kr/index.html">이용약관</a>
+        <div style="width:30px;"></div>
+        <a href="./privacy/kr/index.html">개인정보처리방침</a>
+    </div>
+    <div id="container" class="container" style="margin-top: 2.5px;">
         <div>
-            <p id="title" class="title">노트를 만들어 볼까요</p>
-            <p id="desc" class="desc">다양한 색의 노트를<br>만들고 편집할 수 있습니다.</p>
+            <p id="title" class="title">나만의 노트</p>
+            <p id="desc" class="desc"> </p>
         </div>
         
         <!-- Slider main container -->
@@ -130,13 +159,13 @@
                 
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/2.png"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/2.jpg"/>
                     </div>
                 </div>
     
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/3.png"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/3.jpg"/>
                     </div>
                 </div>
     
@@ -148,7 +177,7 @@
     
                 <div class="swiper-slide">
                     <div class="swiper-item">
-                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/5.png"/>
+                        <img class="swiper-image" style="height: 350px" src="./images/app/kr/5.jpg"/>
                     </div>
                 </div>
             </div>
@@ -186,6 +215,19 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
 
+        function force_store(url) {
+            if(!!touch_processing) {
+                touch_processing = false;
+                return
+            }
+
+            if(!isOther) {
+                store_touched = true;
+            }
+            window.location.replace(url);
+            // var win = window.open(url, '_blank');
+        }
+
         function touch_appstore(event) {
             if(!!touch_processing) {
                 touch_processing = false;
@@ -201,6 +243,7 @@
             var win = window.open("https://apps.apple.com/kr/app/id1551315623", '_blank');
             win.focus();
         }
+
 
         function touch_playstore(event) {
             if(!!touch_processing) {
@@ -230,24 +273,24 @@
         }
         
         var descriptions = [{
-            title: "노트를 만들어 볼까요",
-            desc: "다양한 색의 노트를<br>만들고 편집할 수 있습니다.",
+            title: "나만의 노트",
+            desc: " ",
             color: "#e87c7c"
         }, {
-            title: "확 들어오는 인터페이스",
-            desc: "중요도, 메모, 문제 사진을<br>편하게 확인할 수 있습니다.",
+            title: "꽉꽉 채우기",
+            desc: "오려붙인 것처럼..",
             color: "#f5bd45"
         }, {
-            title: "있을 건 다 있다.",
-            desc: "사진 촬영, 가져오기, 편집<br>문제 슬라이드 기능까지",
+            title: "문제 자르기",
+            desc: " ",
             color: "#72cc4e"
         }, {
-            title: "실제로 이렇게 사용",
-            desc: "사진 촬영, 가져오기, 편집<br>문제 슬라이드 기능까지",
+            title: "다양한 기능",
+            desc: " ",
             color: "#7C84E8"
         }, {
-            title: "슬라이드 기능",
-            desc: "좌우로 슬라이드하여<br>다음 문제로 넘어가 보세요.",
+            title: "슬라이드",
+            desc: "넘기면서 풀어나가기~",
             color: "#d87ce8"
         }]
 
@@ -263,21 +306,27 @@
             appstore.style.cursor = "pointer";
 
             if(mobile === "android") {
+                // setTimeout(() => {
+                //     force_store("market://details?id=com.joondong.notes");
+                // }, 3000);
                 playstore.style.display = "block";
-                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 85)}px`;
             } 
             else if(mobile === "ios") {
+                // setTimeout(() => {
+                //     force_store("https://apps.apple.com/kr/app/id1551315623");
+                // }, 3000);
                 appstore.style.display = "block";
-                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.1, 85)}px`;
             }
             else {
                 isOther = true;
                 playstore.style.display = "block";
-                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+                document.getElementById("playstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 85)}px`;
                 
                 const appstore = document.getElementById("appstore");
                 appstore.style.display = "block";
-                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 100)}px`;
+                document.getElementById("appstore-image").style.height = `${Math.min(window.innerHeight * 0.085, 85)}px`;
 
                 document.getElementById("dummy").style.display = "block";
             }
@@ -304,15 +353,15 @@
             });
 
             const container = document.getElementById("container")
-            container.style.height = `${window.innerHeight}px`;
+            container.style.height = `${window.innerHeight * 0.95}px`;
             container.style.display = "flex";
             container.style.justifyContent = "center";
             container.style.alignItems = "center";
             container.style.flexDirection = "column";
 
-            document.getElementById("title").style.fontSize = `${window.innerHeight * 0.045}px`;
-            document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.028}px`;
-            document.getElementById("desc").style.lineHeight = `${window.innerHeight * 0.031}px`;
+            document.getElementById("title").style.fontSize = `${window.innerHeight * 0.07}px`;
+            document.getElementById("desc").style.height = `${window.innerHeight * 0.013}px`;
+            document.getElementById("desc").style.fontSize = `${window.innerHeight * 0.018}px`;
 
             document.getElementById("swiper-container").style.height = `${window.innerHeight * 0.75}px`;
             document.getElementById("iphone-container").style.height = `${window.innerHeight * 0.75}px`;
@@ -324,6 +373,6 @@
             }
         }
     </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./lib/swiper-bundle.min.js"></script>
 </body>
 </html>
