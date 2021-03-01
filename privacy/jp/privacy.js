@@ -6,7 +6,7 @@ var Privacy = `誤答ノートアプリ(以下、誤答ノート)は、ユーザ
   
 誤答ノートアプリは、内部データをバックアップするため**グーグルドライブを使用**します。  
 
-誤答ノートアプリ(**Application ID: notes-8fe78**)は、グーグルドライブへのアクセス権限を得るため、**openid**、電子メール(**userinfo.email**)及び個人情報(**userinfo.profile**)だけでなく、Google Driveのアプリ構成データ確認、生成、削除に対する権限(**drive許可。appdata**)を要求します。    
+誤答ノートアプリ(**Application ID: notes-8fe78**)は、グーグルドライブへのアクセス権限を得るため、Googleで自分の個人情報を作成して接続(**openid**)、Eメール(**userinfo.email**)及び個人情報(**userinfo.profile**)だけでなく、Google Driveのアプリ構成データを確認、生成、削除に対する権限(duserinfo.email**)を許可します。    
 
 Googleアカウントのopenid、メールや個人情報はサーバに保存されず、**アプリ設定画面で**どのアカウントと接続されたかを表示するためにのみ使用**されます。  
 

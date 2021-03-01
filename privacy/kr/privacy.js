@@ -6,7 +6,7 @@ var Privacy = `1등 오답노트 앱(이하 오답노트)은 사용자 **데이�
   
 1등 오답노트 앱은 내부 데이터를 백업하기 위해 **구글 드라이브를 사용**합니다.  
 
-1등 오답노트 앱(**Application ID: notes-8fe78**)은 구글 드라이브에 접근 권한을 얻기 위해 **openid**, 이메일(**userinfo.email**) 및 개인정보(**userinfo.profile**)뿐만 아니라, Google Drive의 앱 구성 데이터 확인, 생성, 삭제에 대한 권한(**drive.appdata**)을 허용하는 구글 계정 로그인을 요구합니다.    
+1등 오답노트 앱(**Application ID: notes-8fe78**)은 구글 드라이브에 접근 권한을 얻기 위해 Google에서 내 개인 정보를 나와 연결(**openid**), 이메일(**userinfo.email**) 및 개인정보(**userinfo.profile**)뿐만 아니라, Google Drive의 앱 구성 데이터 확인, 생성, 삭제에 대한 권한(**drive.appdata**)을 허용하는 구글 계정 로그인을 요구합니다.    
 
 구글 계정의 openid, 이메일 및 개인정보는 서버에 저장되지 않고,** 앱 설정 화면에서 **어떤 계정과 연결되었는지 표시하기 위해서만 사용**됩니다.  
 
