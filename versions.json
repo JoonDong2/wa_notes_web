@@ -3,6 +3,6 @@
         { "version": "2.5.4", "required": true }
     ],
     "ios": [
-        { "version": "2.5.4", "required": true }
+        { "version": "2.5.2", "required": true }
     ]
 }
