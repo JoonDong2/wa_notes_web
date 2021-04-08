@@ -1,8 +1,8 @@
 {
     "android": [
-        { "version": "2.5.4", "required": true }
+        { "version": "3.0.4", "required": true }
     ],
     "ios": [
-        { "version": "2.5.4", "required": true }
+        { "version": "3.0.4", "required": true }
     ]
 }
