@@ -1,6 +1,6 @@
 {
     "android": [
-        { "version": "4.1.1", "required": true }
+        { "version": "4.0.1", "required": true }
     ],
     "ios": [
         { "version": "4.0.1", "required": true }
